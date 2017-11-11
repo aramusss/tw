@@ -31,8 +31,16 @@ extension NewTaskCoordinator: NewTaskListViewControllerDelegate {
     navigationController.pushViewController(listVC, animated: true)
   }
   
-  func newTaskListViewController(_ vc: NewTaskViewController, didTapSaveTask task: Task) {
-    //TODO: Aram
+  func newTaskListViewController(_ vc: NewTaskViewController, didTapSaveTask task: Task, inList list: TaskList) {
+    TaskAPI.createTask(task: task, inList: list) { success, error in
+      if let _ = error {
+        //TODO: Aram handle error
+      } else if success {
+        self.navigationController.popViewController(animated: true)
+      } else {
+        //TODO: Aram handle error
+      }
+    }
   }
 }
 

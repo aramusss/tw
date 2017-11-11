@@ -64,7 +64,7 @@ class TaskListViewController: UIViewController {
     addTaskButton.backgroundColor = StyleSheet.Button.backgroundColor
     
     // Hardcoded ID (to limit scope of the test :D)
-    API.TaskListAPI.getListForProject(projectID: "301444") { list, error in
+    TaskListAPI.getListForProject(projectID: "301444") { list, error in
       self.tasklists = list
       self.collectionView.reloadData()
     }
