@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		2425F4D21FB780A60074E6A4 /* TaskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2425F4D11FB780A60074E6A4 /* TaskAPI.swift */; };
 		2425F4D41FB790A60074E6A4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2425F4D31FB790A60074E6A4 /* GradientView.swift */; };
+<<<<<<< HEAD
 		247A50CD1FB79E1400D316F3 /* TestNewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247A50CC1FB79E1400D316F3 /* TestNewTaskViewController.swift */; };
 		247A50CF1FB79F9D00D316F3 /* TestTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247A50CE1FB79F9D00D316F3 /* TestTask.swift */; };
+=======
 		2425F4D71FB794E20074E6A4 /* ForceTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2425F4D61FB794E20074E6A4 /* ForceTouch.swift */; };
+>>>>>>> master
 		24A5C6AC1FB744FE002D544D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6AB1FB744FE002D544D /* AppDelegate.swift */; };
 		24A5C6B31FB744FE002D544D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6B21FB744FE002D544D /* Assets.xcassets */; };
 		24A5C6B61FB744FE002D544D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6B41FB744FE002D544D /* LaunchScreen.storyboard */; };
@@ -52,9 +55,12 @@
 /* Begin PBXFileReference section */
 		2425F4D11FB780A60074E6A4 /* TaskAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAPI.swift; sourceTree = "<group>"; };
 		2425F4D31FB790A60074E6A4 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		247A50CC1FB79E1400D316F3 /* TestNewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNewTaskViewController.swift; sourceTree = "<group>"; };
 		247A50CE1FB79F9D00D316F3 /* TestTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTask.swift; sourceTree = "<group>"; };
+=======
 		2425F4D61FB794E20074E6A4 /* ForceTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceTouch.swift; sourceTree = "<group>"; };
+>>>>>>> master
 		24A5C6A81FB744FD002D544D /* tw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A5C6AB1FB744FE002D544D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A5C6B21FB744FE002D544D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,20 +116,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
+		0570F6F827BC0A09BE335E39 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6DC94E75657D5C07AFEB2CD /* Pods-tw.debug.xcconfig */,
+				6E869B64A3C83E906221D5C7 /* Pods-tw.release.xcconfig */,
+				E6CB194039C22BF66EB5F701 /* Pods-twTests.debug.xcconfig */,
+				DBA7D5ADCEC586DDA727DD5B /* Pods-twTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		0E61A83E48AE2653A28FCFEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B3B76361FB339A7F993C4AFF /* Pods_tw.framework */,
+				54FECFAA0FD909C668B50FAB /* Pods_twTests.framework */,
+			);
+			name = Frameworks;
+=======
 		2425F4D51FB794D00074E6A4 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				2425F4D61FB794E20074E6A4 /* ForceTouch.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-        2425F4D51FB794D00074E6A4 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				2425F4D61FB794E20074E6A4 /* ForceTouch.swift */,
-			);
-			path = Helpers;
+>>>>>>> master
 			sourceTree = "<group>";
 		};
 		24A5C69F1FB744FD002D544D = {

@@ -25,13 +25,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window!.rootViewController = navController
     window!.makeKeyAndVisible()
     
-    /* This makes sure there has been at least one roonloop
-     between the creation of navController and presenting it */
-    DispatchQueue.main.async {
+    var didLaunchFromShortcut: Bool = false
+
+    if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+      self.mainCoordinator.start(animated: false)
+      didLaunchFromShortcut = self.handle(shortcutItem: shortcutItem)
+      return false
+    } else {
       self.mainCoordinator.start()
     }
-    
-    return true
+  
+    return !didLaunchFromShortcut
+  }
+  
+  func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+    completionHandler(handle(shortcutItem: shortcutItem))
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
@@ -57,5 +65,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
 
+  private func handle(shortcutItem: UIApplicationShortcutItem) -> Bool {
+    if let type = ShortcutType(rawValue: shortcutItem.type) {
+      return mainCoordinator.handle(shortcut: type)
+    } else {
+      return false
+    }
+  }
 }
 
