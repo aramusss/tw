@@ -49,19 +49,13 @@ class TaskListViewController: UIViewController {
     super.viewDidLoad()
     
     title = "My Lists"
+    view.backgroundColor = StyleSheet.View.backgroundColor
     
     // CollectionView
     collectionView.register(UINib(nibName: String(describing: TaskListCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: TaskListCell.self))
     collectionView.register(UINib(nibName: String(describing: LoadingCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: LoadingCell.self))
     collectionView.delegate = self
     collectionView.dataSource = self
-    
-    // Button
-    addTaskButton.layer.cornerRadius = 30
-    addTaskButton.layer.masksToBounds = true
-    addTaskButton.layer.borderWidth = 2
-    addTaskButton.layer.borderColor = StyleSheet.Button.borderColor.cgColor
-    addTaskButton.backgroundColor = StyleSheet.Button.backgroundColor
     
     // Hardcoded ID (to limit scope of the test :D)
     TaskListAPI.getListForProject(projectID: "301444") { list, error in

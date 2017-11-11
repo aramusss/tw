@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="186" height="155"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ra-js-V5E">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ra-js-V5E" customClass="GradientView" customModule="tw" customModuleProvider="target">
                         <rect key="frame" x="16" y="16" width="154" height="123"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfc-tt-88S">
@@ -47,6 +47,7 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="186" height="155"/>
             <connections>
+                <outlet property="containerView" destination="1Ra-js-V5E" id="8Me-N8-Z2f"/>
                 <outlet property="nameLabel" destination="Tfc-tt-88S" id="2oI-L9-flm"/>
             </connections>
             <point key="canvasLocation" x="-102" y="-96"/>

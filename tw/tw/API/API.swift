@@ -6,7 +6,7 @@
 //  Copyright © 2017 AramApps. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias JSON = [String: Any]
 typealias Path = String
@@ -62,9 +62,13 @@ struct API {
     // To go back to main thread
     func complete(json: JSON?, error: TWError?) {
       DispatchQueue.main.async {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         completion(json, error)
       }
     }
+    
+    
+    UIApplication.shared.isNetworkActivityIndicatorVisible = true
     
     DispatchQueue.global(qos: .background).async {
       URLSession.shared.dataTask(with: request) { data, response, error in

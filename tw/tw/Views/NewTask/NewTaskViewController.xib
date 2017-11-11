@@ -32,7 +32,7 @@
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctU-Ms-CCg" customClass="FormField" customModule="tw" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="92" id="Dop-ox-n1v"/>
                                     </constraints>
@@ -46,7 +46,7 @@
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N1R-6c-bd8" customClass="FormField" customModule="tw" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="124" width="375" height="92"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Description"/>
                                         <userDefinedRuntimeAttribute type="string" keyPath="placeholderText" value="Add description"/>
@@ -69,7 +69,7 @@
                                             </connections>
                                         </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="U3s-Fp-xXP" secondAttribute="trailing" id="A6b-4Q-73S"/>
                                         <constraint firstItem="ZDJ-du-TeV" firstAttribute="leading" secondItem="zGM-Mq-XtO" secondAttribute="leading" id="DwZ-jx-F05"/>
