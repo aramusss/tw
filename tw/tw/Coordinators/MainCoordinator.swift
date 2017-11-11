@@ -17,17 +17,18 @@ class MainCoordinator: Coordinator {
     self.navigationController = navController
   }
   
-  func start() {
+  func start(animated: Bool = true) {
     let taskListVC = TaskListViewController(mode: .full)
     taskListVC.delegate = self
-    navigationController.pushViewController(taskListVC, animated: true)
+    navigationController.pushViewController(taskListVC, animated: animated)
   }
   
-  func handle(shortcut: ShortcutType) {
+  func handle(shortcut: ShortcutType) -> Bool {
     switch shortcut {
     case .add:
       popToRoot()
       startAddTaskFlow()
+      return true
     }
   }
   
