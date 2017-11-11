@@ -22,6 +22,8 @@
 		24A5C6E31FB74EBD002D544D /* TaskListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6E11FB74EBD002D544D /* TaskListCell.xib */; };
 		24A5C6E81FB74FFB002D544D /* LoadingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6E61FB74FFB002D544D /* LoadingCell.swift */; };
 		24A5C6E91FB74FFB002D544D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6E71FB74FFB002D544D /* LoadingCell.xib */; };
+		24A5C6EC1FB75527002D544D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6EB1FB75527002D544D /* API.swift */; };
+		24A5C6F01FB76270002D544D /* TaskListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6EF1FB76270002D544D /* TaskListAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,8 @@
 		24A5C6E11FB74EBD002D544D /* TaskListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskListCell.xib; sourceTree = "<group>"; };
 		24A5C6E61FB74FFB002D544D /* LoadingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingCell.swift; sourceTree = "<group>"; };
 		24A5C6E71FB74FFB002D544D /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		24A5C6EB1FB75527002D544D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		24A5C6EF1FB76270002D544D /* TaskListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				24A5C6AB1FB744FE002D544D /* AppDelegate.swift */,
+				24A5C6EA1FB75519002D544D /* API */,
 				24A5C6DA1FB74E06002D544D /* Models */,
 				24A5C6CE1FB749E3002D544D /* Coordinators */,
 				24A5C6CD1FB749BE002D544D /* Views */,
@@ -185,6 +190,15 @@
 				24A5C6E71FB74FFB002D544D /* LoadingCell.xib */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		24A5C6EA1FB75519002D544D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				24A5C6EB1FB75527002D544D /* API.swift */,
+				24A5C6EF1FB76270002D544D /* TaskListAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +308,10 @@
 			files = (
 				24A5C6DC1FB74E14002D544D /* TaskList.swift in Sources */,
 				24A5C6D01FB749F7002D544D /* Coordinator.swift in Sources */,
+				24A5C6F01FB76270002D544D /* TaskListAPI.swift in Sources */,
 				24A5C6D41FB74AB3002D544D /* StyleSheet.swift in Sources */,
 				24A5C6D21FB74A23002D544D /* MainCoordinator.swift in Sources */,
+				24A5C6EC1FB75527002D544D /* API.swift in Sources */,
 				24A5C6E21FB74EBD002D544D /* TaskListCell.swift in Sources */,
 				24A5C6AC1FB744FE002D544D /* AppDelegate.swift in Sources */,
 				24A5C6E81FB74FFB002D544D /* LoadingCell.swift in Sources */,

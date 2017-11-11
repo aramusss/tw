@@ -25,7 +25,7 @@ class TaskListViewController: UIViewController {
   @IBOutlet weak var addTasksButtonBottomConstraint: NSLayoutConstraint!
   @IBOutlet private weak var collectionView: UICollectionView!
   fileprivate let mode: Mode
-  fileprivate let tasklists: [TaskList]?
+  fileprivate var tasklists: [TaskList]?
   
   init(mode: Mode, lists: [TaskList]? = nil) {
     self.mode = mode
@@ -55,6 +55,12 @@ class TaskListViewController: UIViewController {
     addTaskButton.layer.borderWidth = 2
     addTaskButton.layer.borderColor = StyleSheet.Button.borderColor.cgColor
     addTaskButton.backgroundColor = StyleSheet.Button.backgroundColor
+    
+    // Hardcoded ID (to limit scope of the test :D)
+    API.TaskListAPI.getListForProject(projectID: "301444") { list, error in
+      self.tasklists = list
+      self.collectionView.reloadData()
+    }
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +72,9 @@ class TaskListViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     
-    showButton()
+    if mode == .full {
+      showButton()
+    }
   }
   
   private func showButton() {
@@ -106,11 +114,10 @@ extension TaskListViewController: UICollectionViewDataSource {
     switch Section(rawValue: indexPath.section)! {
     case .loading:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: LoadingCell.self), for: indexPath)
-      
       return cell
     case .lists:
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: TaskListCell.self), for: indexPath) as! TaskListCell
-      
+      cell.update(taskList: tasklists![indexPath.item])
       return cell
     case .count:
       assert(false, "Count section can't hold any cells! It's used for knowing the amout of sections")
@@ -118,7 +125,6 @@ extension TaskListViewController: UICollectionViewDataSource {
     }
   }
 }
-
 
 extension TaskListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
