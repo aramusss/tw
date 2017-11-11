@@ -12,10 +12,25 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
-
+  private var mainCoordinator: MainCoordinator!
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    
+    let navController = UINavigationController()
+    navController.navigationBar.prefersLargeTitles = true
+    mainCoordinator = MainCoordinator(navController: navController)
+    
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window!.rootViewController = navController
+    window!.makeKeyAndVisible()
+    
+    /* This makes sure there has been at least one roonloop
+     between the creation of navController and presenting it */
+    DispatchQueue.main.async {
+      self.mainCoordinator.start()
+    }
+    
     return true
   }
 
