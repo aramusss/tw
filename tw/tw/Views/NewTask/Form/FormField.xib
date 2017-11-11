@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FormField" customModule="tw" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="xVp-fW-vz6" id="bvE-LD-piG"/>
+                <outlet property="textFieldBackgroundView" destination="Kwp-MO-gku" id="w4x-JI-zAh"/>
+                <outlet property="titleLabel" destination="wdg-Au-QFL" id="r5A-2f-lA7"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdg-Au-QFL">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kwp-MO-gku">
+                    <rect key="frame" x="0.0" y="56" width="375" height="60"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Value" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xVp-fW-vz6" customClass="UIFormTextField" customModule="tw" customModuleProvider="target">
+                            <rect key="frame" x="28" y="0.0" width="319" height="60"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="xVp-fW-vz6" secondAttribute="bottom" id="4Kf-VF-Ety"/>
+                        <constraint firstAttribute="trailing" secondItem="xVp-fW-vz6" secondAttribute="trailing" constant="28" id="N2W-yS-Q4P"/>
+                        <constraint firstAttribute="height" constant="60" id="Pta-eX-c6U"/>
+                        <constraint firstItem="xVp-fW-vz6" firstAttribute="leading" secondItem="Kwp-MO-gku" secondAttribute="leading" constant="28" id="Uib-Yn-pBo"/>
+                        <constraint firstItem="xVp-fW-vz6" firstAttribute="top" secondItem="Kwp-MO-gku" secondAttribute="top" id="r32-dM-5tb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Kwp-MO-gku" secondAttribute="bottom" id="3n2-2a-ZpM"/>
+                <constraint firstItem="Kwp-MO-gku" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ScF-RA-D4n"/>
+                <constraint firstAttribute="trailing" secondItem="wdg-Au-QFL" secondAttribute="trailing" id="T5Z-ai-kKx"/>
+                <constraint firstItem="wdg-Au-QFL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UdA-3o-Yj3"/>
+                <constraint firstAttribute="trailing" secondItem="Kwp-MO-gku" secondAttribute="trailing" id="hmE-D9-TLS"/>
+                <constraint firstItem="wdg-Au-QFL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="y8Q-M4-4ZQ"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33.5" y="-176"/>
+        </view>
+    </objects>
+</document>

@@ -14,7 +14,6 @@ struct TaskList {
 }
 
 extension TaskList {
-  
   private enum Key: String {
     case name = "name",
     id = "id"

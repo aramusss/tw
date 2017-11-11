@@ -24,6 +24,13 @@
 		24A5C6E91FB74FFB002D544D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6E71FB74FFB002D544D /* LoadingCell.xib */; };
 		24A5C6EC1FB75527002D544D /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6EB1FB75527002D544D /* API.swift */; };
 		24A5C6F01FB76270002D544D /* TaskListAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6EF1FB76270002D544D /* TaskListAPI.swift */; };
+		24A5C6F41FB76870002D544D /* NewTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6F21FB76870002D544D /* NewTaskViewController.swift */; };
+		24A5C6F51FB76870002D544D /* NewTaskViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6F31FB76870002D544D /* NewTaskViewController.xib */; };
+		24A5C6FA1FB768BD002D544D /* KeyboardFormHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6F71FB768BD002D544D /* KeyboardFormHandler.swift */; };
+		24A5C6FB1FB768BD002D544D /* FormField.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6F81FB768BD002D544D /* FormField.xib */; };
+		24A5C6FC1FB768BD002D544D /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6F91FB768BD002D544D /* FormField.swift */; };
+		24A5C6FF1FB7695A002D544D /* UIFormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6FE1FB7695A002D544D /* UIFormTextField.swift */; };
+		24A5C7011FB76C2E002D544D /* NewTaskCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C7001FB76C2E002D544D /* NewTaskCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +65,13 @@
 		24A5C6E71FB74FFB002D544D /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		24A5C6EB1FB75527002D544D /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		24A5C6EF1FB76270002D544D /* TaskListAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListAPI.swift; sourceTree = "<group>"; };
+		24A5C6F21FB76870002D544D /* NewTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskViewController.swift; sourceTree = "<group>"; };
+		24A5C6F31FB76870002D544D /* NewTaskViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTaskViewController.xib; sourceTree = "<group>"; };
+		24A5C6F71FB768BD002D544D /* KeyboardFormHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardFormHandler.swift; sourceTree = "<group>"; };
+		24A5C6F81FB768BD002D544D /* FormField.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FormField.xib; sourceTree = "<group>"; };
+		24A5C6F91FB768BD002D544D /* FormField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
+		24A5C6FE1FB7695A002D544D /* UIFormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFormTextField.swift; sourceTree = "<group>"; };
+		24A5C7001FB76C2E002D544D /* NewTaskCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +115,7 @@
 			children = (
 				24A5C6AB1FB744FE002D544D /* AppDelegate.swift */,
 				24A5C6EA1FB75519002D544D /* API */,
+				24A5C6FD1FB76939002D544D /* Subclasses */,
 				24A5C6DA1FB74E06002D544D /* Models */,
 				24A5C6CE1FB749E3002D544D /* Coordinators */,
 				24A5C6CD1FB749BE002D544D /* Views */,
@@ -132,6 +147,7 @@
 		24A5C6CD1FB749BE002D544D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				24A5C6F11FB7685D002D544D /* NewTask */,
 				24A5C6D51FB74BE8002D544D /* TaskList */,
 			);
 			path = Views;
@@ -142,6 +158,7 @@
 			children = (
 				24A5C6CF1FB749F7002D544D /* Coordinator.swift */,
 				24A5C6D11FB74A23002D544D /* MainCoordinator.swift */,
+				24A5C7001FB76C2E002D544D /* NewTaskCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -199,6 +216,34 @@
 				24A5C6EF1FB76270002D544D /* TaskListAPI.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		24A5C6F11FB7685D002D544D /* NewTask */ = {
+			isa = PBXGroup;
+			children = (
+				24A5C6F61FB768B8002D544D /* Form */,
+				24A5C6F21FB76870002D544D /* NewTaskViewController.swift */,
+				24A5C6F31FB76870002D544D /* NewTaskViewController.xib */,
+			);
+			path = NewTask;
+			sourceTree = "<group>";
+		};
+		24A5C6F61FB768B8002D544D /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				24A5C6F91FB768BD002D544D /* FormField.swift */,
+				24A5C6F81FB768BD002D544D /* FormField.xib */,
+				24A5C6F71FB768BD002D544D /* KeyboardFormHandler.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
+		24A5C6FD1FB76939002D544D /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				24A5C6FE1FB7695A002D544D /* UIFormTextField.swift */,
+			);
+			path = Subclasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +331,9 @@
 			files = (
 				24A5C6E31FB74EBD002D544D /* TaskListCell.xib in Resources */,
 				24A5C6B61FB744FE002D544D /* LaunchScreen.storyboard in Resources */,
+				24A5C6F51FB76870002D544D /* NewTaskViewController.xib in Resources */,
 				24A5C6D91FB74C1A002D544D /* TaskListViewController.xib in Resources */,
+				24A5C6FB1FB768BD002D544D /* FormField.xib in Resources */,
 				24A5C6E91FB74FFB002D544D /* LoadingCell.xib in Resources */,
 				24A5C6B31FB744FE002D544D /* Assets.xcassets in Resources */,
 			);
@@ -308,15 +355,20 @@
 			files = (
 				24A5C6DC1FB74E14002D544D /* TaskList.swift in Sources */,
 				24A5C6D01FB749F7002D544D /* Coordinator.swift in Sources */,
+				24A5C6FA1FB768BD002D544D /* KeyboardFormHandler.swift in Sources */,
 				24A5C6F01FB76270002D544D /* TaskListAPI.swift in Sources */,
+				24A5C7011FB76C2E002D544D /* NewTaskCoordinator.swift in Sources */,
 				24A5C6D41FB74AB3002D544D /* StyleSheet.swift in Sources */,
 				24A5C6D21FB74A23002D544D /* MainCoordinator.swift in Sources */,
+				24A5C6FF1FB7695A002D544D /* UIFormTextField.swift in Sources */,
 				24A5C6EC1FB75527002D544D /* API.swift in Sources */,
 				24A5C6E21FB74EBD002D544D /* TaskListCell.swift in Sources */,
 				24A5C6AC1FB744FE002D544D /* AppDelegate.swift in Sources */,
 				24A5C6E81FB74FFB002D544D /* LoadingCell.swift in Sources */,
 				24A5C6DE1FB74E1B002D544D /* Task.swift in Sources */,
+				24A5C6F41FB76870002D544D /* NewTaskViewController.swift in Sources */,
 				24A5C6D81FB74C1A002D544D /* TaskListViewController.swift in Sources */,
+				24A5C6FC1FB768BD002D544D /* FormField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

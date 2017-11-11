@@ -19,6 +19,19 @@ class MainCoordinator: Coordinator {
   
   func start() {
     let taskListVC = TaskListViewController(mode: .full)
+    taskListVC.delegate = self
     navigationController.pushViewController(taskListVC, animated: true)
+  }
+}
+
+extension MainCoordinator: TaskListViewControllerDelegate {
+  func taskListViewControllerDidTapAddTask(_ vc: TaskListViewController) {
+    let newTaskCoordinator = NewTaskCoordinator(navController: self.navigationController)
+    self.nextCoordinator = newTaskCoordinator
+    newTaskCoordinator.start()
+  }
+  
+  func taskListViewController(_ vc: TaskListViewController, didSelectTaskList taskList: TaskList) {
+    // TODO: Aram (because this is a test, this won't do anything)
   }
 }

@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TaskListViewControllerDelegate: class {
+  func taskListViewControllerDidTapAddTask(_ vc: TaskListViewController)
+  func taskListViewController(_ vc: TaskListViewController, didSelectTaskList taskList: TaskList)
+}
+
 class TaskListViewController: UIViewController {
   
   enum Mode {
@@ -26,6 +31,8 @@ class TaskListViewController: UIViewController {
   @IBOutlet private weak var collectionView: UICollectionView!
   fileprivate let mode: Mode
   fileprivate var tasklists: [TaskList]?
+  
+  var delegate: TaskListViewControllerDelegate?
   
   init(mode: Mode, lists: [TaskList]? = nil) {
     self.mode = mode
@@ -74,6 +81,7 @@ class TaskListViewController: UIViewController {
     
     if mode == .full {
       showButton()
+      addTaskButton.addTarget(self, action: #selector(didTapAddTaskButton(_:)), for: .touchUpInside)
     }
   }
   
@@ -92,9 +100,18 @@ class TaskListViewController: UIViewController {
       self.view.layoutIfNeeded()
     }, completion: nil)
   }
+  
+  @objc private func didTapAddTaskButton(_ sender: UIButton) {
+    delegate?.taskListViewControllerDidTapAddTask(self)
+  }
 }
 
-extension TaskListViewController: UICollectionViewDelegate { }
+extension TaskListViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    delegate?.taskListViewController(self, didSelectTaskList: tasklists![indexPath.item])
+  }
+}
+
 extension TaskListViewController: UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return Section.count.rawValue
@@ -132,7 +149,12 @@ extension TaskListViewController: UICollectionViewDelegateFlowLayout {
     case .loading:
       return CGSize(width: collectionView.frame.size.width, height: 260)
     case .lists:
-      return CGSize(width: collectionView.frame.size.width / 2, height: 200)
+      switch mode {
+      case .full:
+        return CGSize(width: collectionView.frame.size.width / 2, height: 200)
+      case .list:
+        return CGSize(width: collectionView.frame.size.width, height: 100)
+      }
     default: return .zero
     }
   }
