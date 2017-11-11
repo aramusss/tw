@@ -22,13 +22,25 @@ class MainCoordinator: Coordinator {
     taskListVC.delegate = self
     navigationController.pushViewController(taskListVC, animated: true)
   }
+  
+  func handle(shortcut: ShortcutType) {
+    switch shortcut {
+    case .add:
+      popToRoot()
+      startAddTaskFlow()
+    }
+  }
+  
+  fileprivate func startAddTaskFlow() {
+    let newTaskCoordinator = NewTaskCoordinator(navController: self.navigationController)
+    self.nextCoordinator = newTaskCoordinator
+    newTaskCoordinator.start()
+  }
 }
 
 extension MainCoordinator: TaskListViewControllerDelegate {
   func taskListViewControllerDidTapAddTask(_ vc: TaskListViewController) {
-    let newTaskCoordinator = NewTaskCoordinator(navController: self.navigationController)
-    self.nextCoordinator = newTaskCoordinator
-    newTaskCoordinator.start()
+    startAddTaskFlow()
   }
   
   func taskListViewController(_ vc: TaskListViewController, didSelectTaskList taskList: TaskList) {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2425F4D21FB780A60074E6A4 /* TaskAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2425F4D11FB780A60074E6A4 /* TaskAPI.swift */; };
 		2425F4D41FB790A60074E6A4 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2425F4D31FB790A60074E6A4 /* GradientView.swift */; };
+		2425F4D71FB794E20074E6A4 /* ForceTouch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2425F4D61FB794E20074E6A4 /* ForceTouch.swift */; };
 		24A5C6AC1FB744FE002D544D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24A5C6AB1FB744FE002D544D /* AppDelegate.swift */; };
 		24A5C6B31FB744FE002D544D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6B21FB744FE002D544D /* Assets.xcassets */; };
 		24A5C6B61FB744FE002D544D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24A5C6B41FB744FE002D544D /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		2425F4D11FB780A60074E6A4 /* TaskAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskAPI.swift; sourceTree = "<group>"; };
 		2425F4D31FB790A60074E6A4 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2425F4D61FB794E20074E6A4 /* ForceTouch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceTouch.swift; sourceTree = "<group>"; };
 		24A5C6A81FB744FD002D544D /* tw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24A5C6AB1FB744FE002D544D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		24A5C6B21FB744FE002D544D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2425F4D51FB794D00074E6A4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2425F4D61FB794E20074E6A4 /* ForceTouch.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		24A5C69F1FB744FD002D544D = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				24A5C6AB1FB744FE002D544D /* AppDelegate.swift */,
+				2425F4D51FB794D00074E6A4 /* Helpers */,
 				24A5C6EA1FB75519002D544D /* API */,
 				24A5C6FD1FB76939002D544D /* Subclasses */,
 				24A5C6DA1FB74E06002D544D /* Models */,
@@ -373,6 +384,7 @@
 				24A5C6E21FB74EBD002D544D /* TaskListCell.swift in Sources */,
 				24A5C6AC1FB744FE002D544D /* AppDelegate.swift in Sources */,
 				24A5C6E81FB74FFB002D544D /* LoadingCell.swift in Sources */,
+				2425F4D71FB794E20074E6A4 /* ForceTouch.swift in Sources */,
 				24A5C6DE1FB74E1B002D544D /* Task.swift in Sources */,
 				24A5C6F41FB76870002D544D /* NewTaskViewController.swift in Sources */,
 				24A5C6D81FB74C1A002D544D /* TaskListViewController.swift in Sources */,
