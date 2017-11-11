@@ -17,18 +17,31 @@ class MainCoordinator: Coordinator {
     self.navigationController = navController
   }
   
-  func start() {
+  func start(animated: Bool = true) {
     let taskListVC = TaskListViewController(mode: .full)
     taskListVC.delegate = self
-    navigationController.pushViewController(taskListVC, animated: true)
+    navigationController.pushViewController(taskListVC, animated: animated)
+  }
+  
+  func handle(shortcut: ShortcutType) -> Bool {
+    switch shortcut {
+    case .add:
+      popToRoot()
+      startAddTaskFlow()
+      return true
+    }
+  }
+  
+  fileprivate func startAddTaskFlow() {
+    let newTaskCoordinator = NewTaskCoordinator(navController: self.navigationController)
+    self.nextCoordinator = newTaskCoordinator
+    newTaskCoordinator.start()
   }
 }
 
 extension MainCoordinator: TaskListViewControllerDelegate {
   func taskListViewControllerDidTapAddTask(_ vc: TaskListViewController) {
-    let newTaskCoordinator = NewTaskCoordinator(navController: self.navigationController)
-    self.nextCoordinator = newTaskCoordinator
-    newTaskCoordinator.start()
+    startAddTaskFlow()
   }
   
   func taskListViewController(_ vc: TaskListViewController, didSelectTaskList taskList: TaskList) {
