@@ -10,6 +10,7 @@ target 'tw' do
   target 'twTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'FBSnapshotTestCase'
   end
 
 end
