@@ -32,10 +32,10 @@ class MainCoordinator: Coordinator {
     }
   }
   
-  fileprivate func startAddTaskFlow() {
+  fileprivate func startAddTaskFlow(withPreselectedTaskList taskList: TaskList? = nil) {
     let newTaskCoordinator = NewTaskCoordinator(navController: self.navigationController)
     self.nextCoordinator = newTaskCoordinator
-    newTaskCoordinator.start()
+    newTaskCoordinator.start(taskList: taskList)
   }
 }
 
@@ -45,6 +45,13 @@ extension MainCoordinator: TaskListViewControllerDelegate {
   }
   
   func taskListViewController(_ vc: TaskListViewController, didSelectTaskList taskList: TaskList) {
-    // TODO: Aram (because this is a test, this won't do anything)
+    let alert = UIAlertController(title: "New task", message: "Create new task in \(taskList.name) list?", preferredStyle: .actionSheet)
+    alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
+      self.startAddTaskFlow(withPreselectedTaskList: taskList)
+    }))
+    alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.cancel, handler: { _ in
+      
+    }))
+    vc.present(alert, animated: true, completion: nil)
   }
 }

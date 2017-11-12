@@ -17,8 +17,8 @@ class NewTaskCoordinator: Coordinator {
     self.navigationController = navController
   }
   
-  func start() {
-    let newTaskVC = NewTaskViewController()
+  func start(taskList: TaskList? = nil) {
+    let newTaskVC = NewTaskViewController(taskList: taskList)
     newTaskVC.delegate = self
     navigationController.pushViewController(newTaskVC, animated: true)
   }

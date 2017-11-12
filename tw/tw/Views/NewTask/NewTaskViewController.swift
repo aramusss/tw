@@ -29,6 +29,17 @@ class NewTaskViewController: UIViewController {
   fileprivate var taskDescription: String = ""
   fileprivate var taskList: TaskList?
   
+  init(taskList: TaskList? = nil) {
+    self.taskList = taskList
+    super.init(nibName: String(describing: NewTaskViewController.self), bundle: nil)
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -47,7 +58,12 @@ class NewTaskViewController: UIViewController {
     setListButton.layer.borderWidth = 1
     setListButton.layer.borderColor = StyleSheet.TextField.borderColor.cgColor
     setListButton.backgroundColor = .white
-    setListButton.setTitle("Select List", for: .normal)
+    
+    if let taskList = taskList {
+      selectTaskList(taskList)
+    } else {
+      setListButton.setTitle("Select List", for: .normal)
+    }
     
     descriptionField.delegate = self
     nameField.delegate = self
