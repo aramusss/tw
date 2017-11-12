@@ -26,8 +26,8 @@ class TaskListViewController: UIViewController {
     count
   }
   
-  @IBOutlet weak var addTaskButton: UIButton!
-  @IBOutlet weak var addTasksButtonBottomConstraint: NSLayoutConstraint!
+  @IBOutlet private weak var addTaskButton: UIButton!
+  @IBOutlet private weak var addTasksButtonBottomConstraint: NSLayoutConstraint!
   @IBOutlet private weak var collectionView: UICollectionView!
   fileprivate let mode: Mode
   fileprivate var tasklists: [TaskList]?

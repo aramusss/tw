@@ -9,7 +9,6 @@
 import UIKit
 
 typealias JSON = [String: Any]
-typealias Path = String
 
 enum TWError: Error {
   case API(description: String)
@@ -20,6 +19,11 @@ enum TWError: Error {
 struct API {
   private static let key: String = ProcessInfo.processInfo.environment["USER_PRIVATE_KEY"]!
   private static let baseURL: String  = "yat.teamwork.com"
+  
+  private enum APIResponse {
+    case success,
+    failure(message: String)
+  }
   
   enum Method: String {
     case get = "GET",
@@ -86,25 +90,42 @@ struct API {
         }
         
         // If we are able to convert data to JSON
-        guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments), let json = jsonObject as? JSON else {
+        guard let json = getJSON(from: data) else {
           complete(json: nil, error: TWError.API(description: "JSON not well formatted"))
           return
         }
         
         // If the API has returned an error
-        guard let status = json["STATUS"] as? String, status == "OK" else {
-          if let message = json["MESSAGE"] as? String {
-            print(message)
-            complete(json: nil, error: TWError.API(description: message))
-          } else {
-            complete(json: nil, error: TWError.API(description: "API returning STATUS is not OK without message"))
-          }
+        switch getAPIResponse(from: json) {
+        case .failure(let message):
+          complete(json: nil, error: TWError.API(description: message))
           return
+        case .success: break
         }
         
         // All looks good
         complete(json: json, error: nil)
       }.resume()
     }
+  }
+  
+  private static func getJSON(from data: Data) -> JSON? {
+    guard let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments), let json = jsonObject as? JSON else {
+      return nil
+    }
+    
+    return json
+  }
+  
+  private static func getAPIResponse(from json: JSON) -> APIResponse {
+    guard let status = json["STATUS"] as? String, status == "OK" else {
+      if let message = json["MESSAGE"] as? String {
+        return .failure(message: message)
+      } else {
+        return .failure(message: "API returning STATUS is not OK without message")
+      }
+    }
+    
+    return .success
   }
 }
